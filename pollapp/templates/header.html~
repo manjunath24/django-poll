@@ -56,7 +56,7 @@ margin:0px;
 		        <div class="container">
 		          <ul class="nav">
 		            <li {% if home %}class="active"{% endif %}><a href="{% url 'index' %}">Home</a></li>
-		            <li ><a href="{% url 'about' %}">About</a></li>
+		            <li {% if about %}class="active"{% endif %}><a href="{% url 'about' %}">About</a></li>
 		          </ul>
 		        </div>
 		      </div>
