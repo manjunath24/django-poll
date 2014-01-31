@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', views.index,name='index'),
+    url(r'^about/$', views.about,name='about'),
     url(r'^(?P<poll_id>\d+)/$', views.poll_details,name='details'),
     url(r'^(?P<poll_id>\d+)/vote/$', views.vote,name='vote'),
 )

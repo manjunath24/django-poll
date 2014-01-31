@@ -42,7 +42,7 @@ html,body{
 
 ul{
 list-style-type:none;
-
+margin:0px;
 }
 
 </style>
@@ -55,8 +55,8 @@ list-style-type:none;
 		      <div class="navbar-inner">
 		        <div class="container">
 		          <ul class="nav">
-		            <li ><a href="{% url 'index' %}">Home</a></li>
-		            <li ><a href=""">About</a></li>
+		            <li {% if home %}class="active"{% endif %}><a href="{% url 'index' %}">Home</a></li>
+		            <li ><a href="{% url 'about' %}">About</a></li>
 		          </ul>
 		        </div>
 		      </div>

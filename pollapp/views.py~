@@ -5,16 +5,16 @@ from pollapp.models import Poll,Choice
 def index(request):
 
 	data = Poll.objects.all().order_by('-pub_date')
-	return render(request,'index.html',{'data':data})
+	return render(request,'index.html',{'data':data,'home':True})
 
 
 
 def poll_details(request,poll_id=None):
 
 	poll = get_object_or_404(Poll,pk=poll_id)
-	count = poll.choice_set.all()
+	choice = poll.choice_set.all()
 	total_votes = 0
-	for i in count:
+	for i in choice:
 		total_votes = total_votes+i.vote
 
 	return render(request,'detail.html',{'data_hash':poll,'total_votes':total_votes})
@@ -30,3 +30,7 @@ def vote(request,poll_id=None):
         selected_choice.save()	
 
 	return HttpResponse(poll.id,content_type="text/plain")
+
+
+def about(request):
+	return render(request,'about.html'{'about':True})

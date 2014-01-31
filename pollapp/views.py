@@ -5,7 +5,7 @@ from pollapp.models import Poll,Choice
 def index(request):
 
 	data = Poll.objects.all().order_by('-pub_date')
-	return render(request,'index.html',{'data':data})
+	return render(request,'index.html',{'data':data,'home':True})
 
 
 
@@ -30,3 +30,7 @@ def vote(request,poll_id=None):
         selected_choice.save()	
 
 	return HttpResponse(poll.id,content_type="text/plain")
+
+
+def about(request):
+	return render(request,'about.html',{'about':True})
