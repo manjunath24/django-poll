@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+<title>Agiliq Blog</title>
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"  type="text/css" />
+
+<!-- Progress Bar -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">body{font-size:62.5%}</style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+
+<style id="jsbin-css">
+
+</style>
+
+
+<!-- Progress Bar -->
+<style>
+.placeholder{
+
+width: 100px;
+height: 100px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+
+}
+
+.thumbnails{
+margin-left:0px;
+}
+
+
+
+html,body{
+    height: 100%
+}
+
+ul{
+list-style-type:none;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+	<h1><a href="/">Agiliq Polls</a></h1>
+	<div class="navbar">
+		      <div class="navbar-inner">
+		        <div class="container">
+		          <ul class="nav">
+		            <li ><a href="{% url 'index' %}">Home</a></li>
+		            <li ><a href=""">About</a></li>
+		          </ul>
+		        </div>
+		      </div>
+	</div>
+
+
