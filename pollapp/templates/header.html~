@@ -4,7 +4,7 @@
 <html>
 
 <head>
-<title>Agiliq Blog</title>
+<title>Agiliq Polls</title>
 <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"  type="text/css" />
 
 <!-- Progress Bar -->
@@ -42,6 +42,7 @@ html,body{
 
 ul{
 list-style-type:none;
+
 }
 
 </style>

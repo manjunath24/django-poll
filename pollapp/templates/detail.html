@@ -37,7 +37,7 @@ $(function(){
 </script>	
 
 <div class="main" >
-	<img src="{% static data_hash.blog_file %}" class="placeholder"/>
+	<img src="{% static data_hash.poll_image %}" class="placeholder"/>
 </div>
 <br/>
 <p style="color:blue;font-size:18px;"><a href="{% url 'details' data_hash.id %}">{{data_hash.question|capfirst}}</a>
@@ -58,10 +58,16 @@ $(function(){
 <!-- ProgressBar -->
 <script>
 a = ({{choice.vote}}/{{total_votes}})*100;
+if(isNaN(a))
+{
+a = 0;
+}
+
 $('.pb').progressbar({ value: a });
 </script>
 
 <!-- ProgressBar -->
+
 {% endfor %}
 </ul>
 <div class="progressBar1 progressBar">

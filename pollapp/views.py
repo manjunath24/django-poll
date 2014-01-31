@@ -12,9 +12,9 @@ def index(request):
 def poll_details(request,poll_id=None):
 
 	poll = get_object_or_404(Poll,pk=poll_id)
-	count = poll.choice_set.all()
+	choice = poll.choice_set.all()
 	total_votes = 0
-	for i in count:
+	for i in choice:
 		total_votes = total_votes+i.vote
 
 	return render(request,'detail.html',{'data_hash':poll,'total_votes':total_votes})
