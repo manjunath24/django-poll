@@ -91,7 +91,7 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
 
-if 'herokupoll' in os.environ:
+if 'herokuapp' in os.environ:
 	import dj_database_url
 	DATABASES['default'] =  dj_database_url.config()
 
