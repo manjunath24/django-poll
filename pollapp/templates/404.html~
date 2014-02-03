@@ -1,3 +1,0 @@
-<h1 align="center">Sorry the blog you're looking for is not here</h1>
-
-<a href="{% url 'home' %}">Go to main page</a>
