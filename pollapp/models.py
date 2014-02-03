@@ -7,6 +7,8 @@ class Poll(models.Model):
 	poll_image = models.FileField(upload_to='images',blank=True)
 	created_by = models.CharField(max_length=100)
 	pub_date = models.DateTimeField()
+	ip_address = models.CharField(max_length=100)
+	fingerprint = models.CharField(max_length=100)
 
 	def __unicode__(self):
 		return self.question

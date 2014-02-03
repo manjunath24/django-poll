@@ -14,12 +14,27 @@
 
 <script type="text/javascript">
 $('#pb').progressbar({ value: 15 });
+
+
 $(function(){
 	
+	// FingerPrint JS 
+
+	    //var fp1 = new Fingerprint();
+	    //var fp2 = new Fingerprint({canvas: true});
+	    //var fp3 = new Fingerprint({ie_activex: true});
+	    var fp4 = new Fingerprint({screen_resolution: true});
+	    // alert(fp4.get());
+
+	   
+	   var fingerprint = fp4.get();
+
+	//FingerPrint JS	
+
 	$('.vote').on('click',function(){
 		var option_id = $(this).prop('rel');
-		var datastring = "option_id="+option_id;
-
+		var datastring = "option_id="+option_id+"&fp="+fingerprint;
+		
 		$.ajax({
 			url : "vote/",
 			type: "GET",
@@ -27,12 +42,19 @@ $(function(){
 			cache : false,
 
 			success:function(response){
-			window.location = "/polls/"+response;
+				
+				if(response == 'voted'){
+					$('.error_msg').html('You have already casted your vote');
+					$('.error_msg').fadeIn(1000);
+					$('.error_msg').fadeOut(5000);
+				}
+				else{
+					window.location = "/polls/"+response;
+				}
 			}
 		});
 	});	
 
-	
 });
 
 </script>	
@@ -75,5 +97,7 @@ $('.pb').progressbar({ value: vote_percent });
 <p>Published on {{data_hash.pub_date}}</p>
 
 
+
+<h2 class="error_msg"></h2>
 
 {% include 'footer.html' %}

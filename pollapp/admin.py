@@ -9,6 +9,7 @@ class ChoiceInline(admin.TabularInline):
 class PollAdmin(admin.ModelAdmin):
    
     inlines = [ChoiceInline]
+    exclude = ('ip_address','fingerprint',)
 
 admin.site.register(Poll,PollAdmin)
 
