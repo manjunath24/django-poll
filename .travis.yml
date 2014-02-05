@@ -9,10 +9,10 @@ install:
   - "pip install pep8"
 
 env:
-    MYAPP_SECRET_KEY=travis
+    POLLAPP_SECRET_KEY=travis
     
 before_script:
   - mysql -e 'create database poll;'    
-  - "pep8 --exclude='agiliq_app/migrations' poll pollapp/"
+  - "pep8 --exclude='pollapp/migrations' poll pollapp/"
 # command to run tests
 script: python manage.py test
