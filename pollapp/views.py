@@ -7,11 +7,6 @@ import socket
 # Create your views here.
 
 
-def index(request):
-    data = Poll.objects.all().order_by('-pub_date')
-    return render(request, 'index.html', {'data': data, 'home': True})
-
-
 def poll_details(request, poll_id=None):
     poll = get_object_or_404(Poll, pk=poll_id)
     choice = poll.choice_set.all()
@@ -38,7 +33,3 @@ def vote(request, poll_id=None):
         return HttpResponse(poll.id, content_type="text/plain")
     else:
         return HttpResponse('voted', content_type="text/plain")
-
-
-def about(request):
-    return render(request, 'about.html', {'about': True})

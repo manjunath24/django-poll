@@ -1,12 +1,12 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
 class Poll(models.Model):
     question = models.CharField(max_length=100)
     poll_image = models.FileField(upload_to='images', blank=True)
-    created_by = models.CharField(max_length=100)
+    created_by = models.ForeignKey(User)
     pub_date = models.DateTimeField()
     ip_address = models.CharField(max_length=100)
     fingerprint = models.CharField(max_length=100)
