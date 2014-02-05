@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pollapp',
+    'south',
+    'django_nose',
 )
 
 MIDDLEWARE_CLASSES = (
