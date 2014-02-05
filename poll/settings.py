@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("POLLAPP_SECRET_KEY",'')
+SECRET_KEY = os.environ.get("POLLAPP_SECRET_KEY", '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -60,8 +60,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'poll',
-	'USER': os.environ.get("MYAPP_DB_USER", ''),
-	'PASSWORD':os.environ.get("MYAPP_DB_PASSWORD", ''),
+        'USER': os.environ.get("MYAPP_DB_USER", ''),
+        'PASSWORD': os.environ.get("MYAPP_DB_PASSWORD", ''),
     }
 }
 
@@ -92,10 +92,8 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/')
 
 if 'herokuapp' in os.environ:
-	import dj_database_url
-	DATABASES['default'] =  dj_database_url.config()
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config()
 
-	# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-	SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
