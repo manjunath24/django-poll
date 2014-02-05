@@ -1,5 +1,7 @@
-from django.shortcuts import render,
-get_list_or_404, get_object_or_404, HttpResponse
+from django.shortcuts import (render,
+                              get_list_or_404,
+                              get_object_or_404,
+                              HttpResponse)
 from pollapp.models import Poll, Choice
 import socket
 # Create your views here.
